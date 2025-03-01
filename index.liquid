@@ -5,18 +5,28 @@ title: 11ty Boilerplate
 
 <h1>Lab <strong>7.5</strong></h1>
 
-<div class="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+<div class="min-h-screen flex flex-col items-center p-6">
   <h2 class="text-2xl font-bold mb-6">API Endpoints</h2>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-    <div class="shadow-lg rounded-2xl p-4 bg-white">
-      <h3 class="text-xl font-semibold mb-2">Todo Item</h3>
-      <p class="text-gray-700">{{ apiData.todo | json }}</p>
+    <div class="shadow-lg rounded-2xl p-4 bg-green-500">
+      <h3 class="text-xl font-semibold mb-2">Todo Item 1</h3>
+      <div x-data="{ todo: {} }" x-init="fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(data => todo = data)">
+        <p><strong>Title:</strong> <span x-text="todo.title"></span></p>
+        <p><strong>Completed:</strong> <span x-text="todo.completed ? 'Yes' : 'No'"></span></p>
+      </div>
     </div>
     
-    <div class="shadow-lg rounded-2xl p-4 bg-white">
-      <h3 class="text-xl font-semibold mb-2 ">Products</h3>
-      <p class="text-gray-700">{{ apiData.products | json }}</p>
+    <div class="shadow-lg rounded-2xl p-4 bg-green-500">
+        <h3 class="text-xl font-semibold mb-2">Todo Item 2</h3>
+      <div x-data="{ todo: {} }" x-init="fetch('https://jsonplaceholder.typicode.com/todos/4')
+            .then(response => response.json())
+            .then(data => todo = data)">
+        <p><strong>Title:</strong> <span x-text="todo.title"></span></p>
+        <p><strong>Completed:</strong> <span x-text="todo.completed ? 'Yes' : 'No'"></span></p>
+      </div>
     </div>
   </div>
 </div>
