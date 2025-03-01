@@ -4,6 +4,8 @@ body {
     background: #2D3142;
     padding: 0 40px;
     text-align: center;
+    margin: 0 auto;
+    width: 1000px;
 }
 
 nav {

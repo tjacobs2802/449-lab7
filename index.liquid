@@ -3,5 +3,20 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<h1>Lab <strong>7.5</strong></h1>
+
+<div class="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+  <h2 class="text-2xl font-bold mb-6">API Endpoints</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+    <div class="shadow-lg rounded-2xl p-4 bg-white">
+      <h3 class="text-xl font-semibold mb-2">Todo Item</h3>
+      <p class="text-gray-700">{{ apiData.todo | json }}</p>
+    </div>
+    
+    <div class="shadow-lg rounded-2xl p-4 bg-white">
+      <h3 class="text-xl font-semibold mb-2 ">Products</h3>
+      <p class="text-gray-700">{{ apiData.products | json }}</p>
+    </div>
+  </div>
+</div>
